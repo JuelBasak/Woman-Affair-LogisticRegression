@@ -1,2 +1,6 @@
 .ipynb_checkpoints
 .gcloudignore
+*.ipynb
+*.pdf
+*.docx
+*.gitignore
