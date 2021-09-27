@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="static/style.css">
+
+    <title>Woman Affair Classifier</title>
+</head>
+
+<body>
+
+    <form action="/predict" method="POST">
+
+        <div class="container">
+
+            <div class="heading">
+                <h1>Did the Woman had an Affair ?</h1>
+            </div>
+
+                {% if output == 0 %}
+                <div class="output1">
+                    <h3>No Affairs yet!</h3>
+                </div>
+                {% elif output == 1 %}
+                <div class="output2">
+                    <h3>Probably She has Affair(s)!</h3>
+                </div>
+                {% endif %}
+
+            <div class='label'>
+            <label for="rate_marriage">Rate the Marriage</label>
+            <input class="form-control" type="number" placeholder="Eg: 1=very poor, 5=very good" id="rate_marriage"
+                name="rate_marriage" step="1" max="5" min="1" required>
+            </div>
+
+            <div class='label'>
+            <label for="age">Age of the Women</label>
+            <input class="form-control" type="number" placeholder="Eg: 10-100" id="age" name="age" step="1" max="100"
+                min="1" required>
+            </div>
+
+            <div class='label'>
+            <label for="yrs_married">Number of Years Married</label>
+            <input class="form-control" type="number" placeholder="Eg: 1-100" id="yrs_married" name="yrs_married"
+                step="0.1" max="100" min="0" required>
+            </div>
+
+            <div class='label'>
+            <label for="children">Number of Children</label>
+            <input class="form-control" type="number" placeholder="Eg: 0-10" id="children" name="children" step="1"
+                max="10" min="0" required>
+            </div>
+
+            <div class='label'>
+            <label for="religious">Rate the Religious Nature</label>
+            <input class="form-control" type="number" placeholder="Eg: 1=not religious, 4=strongly religious"
+                id="religious" name="religious" step="1" max="4" min="1" required>
+            </div>
+
+            <div class='label'>
+            <label for="educ">Enter the level of Education</label>
+            <p>Eg: 9=grade school, 12=high school, 14=some college, 16=college graduate, 17=some graduate school, 20=advanced degree</p>
+            <input class="form-control" type="number"
+                placeholder="Use the above data for scoring"
+                id="educ" name="educ" step="1" max="20" min="9" required>
+            </div>
+
+            <div class='label'>
+            <label for="occupation">Woman's Occupation</label>
+            <p>Eg: 1=student, 2=farming/semi-skilled/unskilled, 3=white collar, 4=teacher/nurse/writer/technician/skilled 5=managerial/business, 6=professional with advanced degree</p>
+            <input class="form-control" type="number"
+                placeholder="Use the above data for scoring"
+                id="occupation" name="occupation" step="1" max="6" min="1" required>
+            </div>
+
+            <div class='label'>
+            <label for="occupation_husb">Woman's Husband's Occupation</label>
+            <p>Eg: 1=student, 2=farming/semi-skilled/unskilled, 3=white collar, 4=teacher/nurse/writer/technician/skilled 5=managerial/business, 6=professional with advanced degree</p>
+            <input class="form-control" type="textarea"
+                placeholder="Use the above data for scoring"
+                id="occupation_husb" name="occupation_husb" step="1" max="6" min="1" required>
+            </div>
+
+            <br>
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Lets Predict!</button>
+            </div>
+
+
+        </div>
+    </form>
+
+
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <a class="navbar-brand" href="https://github.com/JuelBasak/Woman-Affair-LogisticRegression.git"
+            target="_blank">Made by
+            Biswajit 😎. Git
+            Link-<strong>https://github.com/JuelBasak/Woman-Affair-LogisticRegression.git</strong></a>
+    </nav>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        input.setAttribute('size',input.getAttribute('placeholder').length);
+        </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
